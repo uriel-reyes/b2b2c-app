@@ -1,3 +1,3 @@
-import getCustomers from "./api/customersApi";
+import getCustomers from "./api/customersApi"
 
 getCustomers()

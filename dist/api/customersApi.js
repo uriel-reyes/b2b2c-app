@@ -5,12 +5,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const BuildClient_1 = __importDefault(require("./BuildClient"));
 const getCustomers = () => {
-    return BuildClient_1.default.inStoreKeyWithStoreKeyValue({ storeKey: "data-model-uriel" })
+    return BuildClient_1.default
+        // .inStoreKeyWithStoreKeyValue({storeKey: 'data-model-uriel'})
         .customers()
-        .get()
+        .get({ queryArgs: {
+            where: `stores(key="data-model-uriel")`
+        } })
         .execute()
         .then(response => {
-        const customerResults = response.body.results;
+        const customerResults = response.body;
         console.log(customerResults);
     });
 };

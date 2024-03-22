@@ -10,5 +10,5 @@
     "moduleResolution": "node",      // Resolve modules using Node.js's module resolution strategy
     "skipLibCheck": true             // Skip type checking of all declaration files (*.d.ts)
   },
-  "include": ["src/**/*"]            // Include all files in the src directory
+  "include": ["src/**/*", "src/api/createCustomer.ts", "src/api/createStoreCartAndOrder.ts"]            // Include all files in the src directory
 }
