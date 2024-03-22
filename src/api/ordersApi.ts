@@ -1,7 +1,9 @@
 import apiRoot from "./BuildClient";
 
 const getOrders = () => {
-    return apiRoot.orders()
+    return apiRoot
+        .inStoreKeyWithStoreKeyValue({storeKey:"data-model-uriel"})
+        .orders()
         .get()
         .execute()
         .then(response => {

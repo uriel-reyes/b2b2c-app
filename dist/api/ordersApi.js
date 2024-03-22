@@ -5,7 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const BuildClient_1 = __importDefault(require("./BuildClient"));
 const getOrders = () => {
-    return BuildClient_1.default.orders()
+    return BuildClient_1.default
+        .inStoreKeyWithStoreKeyValue({ storeKey: "data-model-uriel" })
+        .orders()
         .get()
         .execute()
         .then(response => {
